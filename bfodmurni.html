@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BATTLE FIELD OF DEVATA #1</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Definisi Ukuran Font Kustom */
+        .text-11xl-custom {
+            font-size: 9rem;
+            /* Ukuran default untuk mobile/kecil */
+        }
+
+        .text-12xl-custom {
+            font-size: 9rem;
+            /* Ukuran default untuk mobile/kecil */
+        }
+
+        /* Media query untuk tampilan besar (seperti lg:) */
+        @media (min-width: 1024px) {
+
+            /* Ini kira-kira sama dengan lg: di Tailwind */
+            .text-11xl-custom {
+                font-size: 10rem;
+                /* 11xl: 12rem */
+            }
+
+            .text-12xl-custom {
+                font-size: 14rem;
+                /* 12xl: 14rem */
+            }
+        }
+
+        /* Atau gunakan unit Viewport (vw) untuk ukuran super besar yang sangat responsif */
+        .text-hero-size {
+            font-size: 10vw;
+            /* Ukuran berdasarkan lebar viewport */
+        }
+
+        @media (min-width: 768px) {
+
+            /* Untuk tampilan tablet ke atas */
+            .text-hero-size {
+                font-size: 12vw;
+            }
+        }
+
+        @media (min-width: 1280px) {
+
+            /* Untuk tampilan desktop */
+            .text-hero-size {
+                font-size: 14rem;
+                /* Tentukan batas maksimal */
+            }
+        }
+
+        /* Pastikan Bebas Neue di-load (jika Anda tidak menggunakan plugin font) */
+        h1,
+        .font-neue {
+            font-family: "Bebas Neue", sans-serif !important;
+        }
+
+        .custom-text {
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-image: url("https://academy.devatastudio.com/wp-content/uploads/2025/11/image-216.webp");
+        }
+
+        .custom-text-silver {
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-image: url("https://academy.devatastudio.com/wp-content/uploads/2025/11/image-217.webp");
+        }
+
+        h1 {
+            font-family: "Bebas Neue", sans-serif !important;
+        }
+
+        .h1 {
+            font-family: "Bebas Neue", sans-serif !important;
+        }
+
+        /* --- DEFINISI CUSTOM ITEMS-CENTER --- */
+        .vertical-center-force {
+            /* Wajib: Mengaktifkan mode Flexbox */
+            display: flex !important;
+
+            /* Wajib: Meratakan item di tengah secara vertikal */
+            align-items: center !important;
+
+            /* Penting: Pastikan wadah memiliki tinggi (height) yang cukup agar perataan terlihat */
+            /* Contoh: Tinggi minimum 100% dari viewport (layar) */
+            min-height: 100vh !important;
+
+            /* Opsional: Untuk meratakan item di tengah secara horizontal (seperti justify-center) */
+            /* justify-content: center; */
+        }
+
+        /* ------------------------------------- */
+    </style>
+</head>
+
+<body>
+    <header
+        class="bg-[#2a2929] text-white flex items-center justify-between px-4 sm:px-6 lg:px-10 fixed top-0 left-0 w-full z-50 h-[70px]">
+        <div class="flex items-center">
+            <img class="w-[60px] sm:w-[70px] lg:w-[100px]"
+                src="https://academy.devatastudio.com/wp-content/uploads/2025/11/Generative-Fill-copy-1.png"
+                alt="Logo" />
+        </div>
+        <nav class="hidden lg:block">
+            <ol class="flex justify-center gap-4 lg:gap-10 list-none m-0 p-0 font-medium text-lg tracking-wide">
+                <li><a href="#tentang-bfod" class="hover:text-yellow-400 transition-colors"
+                        style="color: white !important">TENTANG</a></li>
+                <li><a href="#benefits" class="hover:text-yellow-400 transition-colors"
+                        style="color: white !important">BENEFIT</a></li>
+                <li><a href="#judges" class="hover:text-yellow-400 transition-colors"
+                        style="color: white !important">JURI</a></li>
+                <li><a href="#cara-daftar" class="hover:text-yellow-400 transition-colors"
+                        style="color: white !important">CARA DAFTAR</a></li>
+                <li><a href="#hadiah" class="hover:text-yellow-400 transition-colors"
+                        style="color: white !important">HADIAH</a></li>
+            </ol>
+        </nav>
+
+        <div class="flex gap-2 sm:gap-4">
+            <div
+                class="rounded-xl bg-gradient-to-r from-yellow-400 via-yellow-200 to-yellow-600 p-[2px] hover:scale-105 transition-all duration-300">
+
+                <a href="https://academy.devatastudio.com/product/merch-bfod1/">
+                    <div
+                        class="p-1 sm:p-2 font-bold text-white bg-[#2a2929] rounded-xl text-xs sm:text-sm lg:text-base">
+                        Beli Merch
+                    </div>
+                </a>
+
+            </div>
+
+            <div
+                class="rounded-xl bg-gradient-to-r from-yellow-400 via-yellow-200 to-yellow-600 p-[2px] hover:brightness-125 hover:scale-105 transition-all duration-300">
+                <a href="https://academy.devatastudio.com/member-content/pendaftaran-kompetisi-cg-bfod1/">
+                    <div class="p-1 sm:p-2 font-bold text-[#2a2929] rounded-xl text-xs sm:text-sm lg:text-base ">
+                        Daftar Sekarang
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </header>
+
+    <section class="overflow-hidden pt-10">
+        <div
+            class="w-full flex justify-center vertical-center-force pt-5 bg-[url('https://academy.devatastudio.com/wp-content/uploads/2025/11/Frame-1321314450@2x-scaled.webp')] bg-cover bg-center text-white min-h-screen py-10">
+            <div class="flex flex-col items-center mt-5 w-full px-4 md:w-[90%] lg:w-[70%] xl:w-[50%]">
+                <div class="font-bold text-base sm:text-xl md:text-xl mb-3 mt-5">
+                    21 NOVEMBER - 21 DESEMBER 2025
+                </div>
+
+                <div class="w-full text-5xl sm:text-7xl md:text-8xl text-11xl-custom text-center custom-text"
+                    style="font-family: 'Bebas Neue', sans-serif !important">
+                    BATTLE FIELD OF DEVATA
+                </div>
+                <div
+                    class="text-2xl sm:text-3xl md:text-4xl font-bold text-transparent custom-text-silver px-2 mb-8 font-neue">
+                    BUKTIKAN KEAHLIANMU DI SEASON #1
+                </div>
+
+                <div class="bg-[#6a6a6a77] backdrop-blur-sm text-center m-5 rounded-2xl p-3 sm:p-5">
+                    <div class="text-white text-xl sm:text-2xl md:text-3xl font-neue">
+                        PRIZE POOL
+                    </div>
+                    <div class="text-4xl sm:text-5xl md:text-6xl text-transparent custom-text font-bold">
+                        Rp.5,000,000
+                    </div>
+                </div>
+
+                <div
+                    class="mb-5 text-xl sm:text-2xl md:text-3xl text-transparent custom-text font-bold text-center px-2 font-neue">
+                    "RUMAH ADAT DI ALAM NUSANTARA"
+                </div>
+
+                <a href="https://academy.devatastudio.com/member-content/pendaftaran-kompetisi-cg-bfod1/">
+                    <div
+                        class="p-[2px] rounded-xl bg-gradient-to-r from-yellow-400 via-yellow-200 to-yellow-600 shadow-[0_0_15px_rgba(255,215,0,0.3)] hover:brightness-125 hover:scale-105 transition-all duration-300 mb-10">
+                        <div class="p-3 text-white text-lg sm:text-xl font-bold rounded-xl">
+                            Daftar Sekarang
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div
+        class="bg-[url('https://txwatpcjenskrdnispuu.supabase.co/storage/v1/object/public/pasar3d/Section%20(1).webp')]">
+        <div
+            class="bg-[url('https://txwatpcjenskrdnispuu.supabase.co/storage/v1/object/public/pasar3d/Section%20(1).webp')] bg-fixed">
+            <section id="tentang-bfod">
+                <div class="w-full flex flex-col items-center justify-center bg-black/40 py-20 px-4">
+                    <div
+                        class="mb-5 text-4xl sm:text-5xl text-transparent custom-text font-bold text-center font-neue">
+                        APA ITU BFOD?
+                    </div>
+
+                    <div
+                        class="text-2xl sm:text-3xl text-center font-bold text-transparent custom-text-silver mb-10 max-w-4xl px-2 tracking-wide font-neue">
+                        "Show off Skill, Build Exposure, Grow Together"
+                    </div>
+
+                    <div
+                        class="text-gray-200 text-center text-lg sm:text-xl w-full max-w-3xl px-4 mb-10 font-read leading-relaxed">
+                        Battle Field of Devata (BFOD) adalah arena kompetisi nasional untuk para 3D Artist
+                        Indonesia.
+                        Ini bukan sekadar lomba, tapi wadah untuk <span class="text-yellow-400 font-bold">mengukur
+                            kemampuan</span>,
+                        membangun <span class="text-yellow-400 font-bold">portofolio profesional</span>, dan
+                        mendapatkan
+                        <span class="text-yellow-400 font-bold">pengakuan industri</span>.
+                    </div>
+                </div>
+            </section>
+
+            <section id="benefits" class="py-20 bg-[#1a1a1a]/90 border-t border-gray-800">
+                <div class="container mx-auto px-4">
+                    <div class="text-center mb-16">
+                        <h2 class="text-5xl sm:text-6xl custom-text font-bold mb-2 font-neue">KENAPA HARUS TURUN KE
+                            ARENA?
+                        </h2>
+                        <p class="text-gray-400 text-xl font-read">Hadiah uang hanyalah bonus. Ini nilai sebenarnya.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                        <div
+                            class="bg-[#2a2929] p-8 rounded-2xl border border-gray-700 text-center hover:border-yellow-500 transition-all group">
+                            <div class="text-6xl mb-4 group-hover:scale-110 transition-transform">🚀</div>
+                            <h3 class="text-3xl text-white mb-3 custom-text-silver font-neue">LEVEL UP PORTFOLIO
+                            </h3>
+                            <p class="text-gray-400 font-read text-sm leading-relaxed">
+                                Tantang dirimu membuat karya standar industri dengan deadline ketat. Hasilnya akan
+                                menjadi aset berharga untuk karirmu.
+                            </p>
+                        </div>
+                        <div
+                            class="bg-[#2a2929] p-8 rounded-2xl border border-gray-700 text-center hover:border-yellow-500 transition-all group">
+                            <div class="text-6xl mb-4 group-hover:scale-110 transition-transform">👁️</div>
+                            <h3 class="text-3xl text-white mb-3 custom-text-silver font-neue">MASSIVE EXPOSURE</h3>
+                            <p class="text-gray-400 font-read text-sm leading-relaxed">
+                                Karya terbaik akan dipamerkan di seluruh jaringan media sosial Devata Studio,
+                                dilihat oleh praktisi dan studio lain.
+                            </p>
+                        </div>
+                        <div
+                            class="bg-[#2a2929] p-8 rounded-2xl border border-gray-700 text-center hover:border-yellow-500 transition-all group">
+                            <div class="text-6xl mb-4 group-hover:scale-110 transition-transform">🤝</div>
+                            <h3 class="text-3xl text-white mb-3 custom-text-silver font-neue">COMMUNITY NETWORK</h3>
+                            <p class="text-gray-400 font-read text-sm leading-relaxed">
+                                Bergabung ke grup eksklusif peserta. Berdiskusi, belajar, dan berkompetisi dengan
+                                talenta 3D terbaik se-Indonesia.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="hadiah" class="py-20 bg-black/20">
+                <div class="w-full flex flex-col items-center justify-center px-4 font-neue">
+                    <div class="text-center py-10">
+                        <div class="text-5xl sm:text-6xl text-transparent custom-text font-bold mb-4">TOTAL PRIZE
+                            POOL</div>
+                        <div class="text-7xl sm:text-9xl text-white mb-10 drop-shadow-lg">RP 5.000.000</div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                            <div
+                                class="bg-[#2a2929] border border-yellow-500/30 text-center rounded-2xl p-8 transform hover:scale-105 transition-transform">
+                                <div class="text-transparent custom-text mb-2 text-4xl font-bold">JUARA UTAMA</div>
+                                <div class="text-white text-5xl font-bold mb-4">Rp 4.000.000</div>
+                                <ul class="text-gray-300 text-xl list-none space-y-2">
+                                    <li>🏆 Trophy Eksklusif BFOD</li>
+                                    <li>📜 Sertifikat Fisik & Digital</li>
+                                    <li>⭐ Feature di IG Devata Studio</li>
+                                </ul>
+                            </div>
+
+                            <div
+                                class="bg-[#2a2929] border border-gray-500/30 text-center rounded-2xl p-8 transform hover:scale-105 transition-transform">
+                                <div class="text-transparent custom-text-silver mb-2 text-4xl font-bold">JUARA
+                                    FAVORIT</div>
+                                <div class="text-white text-5xl font-bold mb-4">Rp 1.000.000</div>
+                                <ul class="text-gray-300 text-xl list-none space-y-2">
+                                    <li>📜 Sertifikat Pemenang</li>
+                                    <li>❤️ Berdasarkan Vote Likes</li>
+                                    <li>⭐ Feature di IG Devata Studio</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <p class="mt-10 text-gray-400 text-lg font-sans mt-5">
+                            *Seluruh peserta yang submit karya akan mendapatkan <strong>Sertifikat Partisipasi
+                                Nasional</strong>.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <section id="cara-daftar" class="bg-[#2a2929] py-20 border-t border-gray-800">
+            <div class="text-center px-4">
+                <div class="pb-10">
+                    <p class="font-neue font-bold text-5xl sm:text-7xl lg:text-8xl leading-none text-white">
+                        CARA BERGABUNG DI <span class="custom-text text-transparent">ARENA</span>
+                    </p>
+                </div>
+
+                <div
+                    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 pb-10 max-w-6xl mx-auto text-white">
+                    <div class="flex flex-col items-center p-4 bg-black/20 rounded-xl border border-gray-700">
+                        <div class="text-5xl mb-4 text-yellow-400">01</div>
+                        <p class="text-2xl font-bold mb-2">BELI MERCH</p>
+                        <p class="text-sm text-gray-400 font-read max-w-xs">
+                            Beli merchandise eksklusif BFOD #1. Ini adalah tiket masukmu. Simpan nomor Invoice-nya.
+                        </p>
+                    </div>
+                    <div class="flex flex-col items-center p-4 bg-black/20 rounded-xl border border-gray-700">
+                        <div class="text-5xl mb-4 text-yellow-400">02</div>
+                        <p class="text-2xl font-bold mb-2">REGISTRASI</p>
+                        <p class="text-sm text-gray-400 font-read max-w-xs">
+                            Masuk ke Member Area, isi formulir pendaftaran menggunakan Nomor Invoice pembelian.
+                        </p>
+                    </div>
+                    <div class="flex flex-col items-center p-4 bg-black/20 rounded-xl border border-gray-700">
+                        <div class="text-5xl mb-4 text-yellow-400">03</div>
+                        <p class="text-2xl font-bold mb-2">BERKARYA</p>
+                        <p class="text-sm text-gray-400 font-read max-w-xs">
+                            Buat karya animasi 3D (5-10 detik) sesuai tema "Rumah Adat di Alam Nusantara".
+                        </p>
+                    </div>
+                    <div class="flex flex-col items-center p-4 bg-black/20 rounded-xl border border-gray-700">
+                        <div class="text-5xl mb-4 text-yellow-400">04</div>
+                        <p class="text-2xl font-bold mb-2">SUBMIT</p>
+                        <p class="text-sm text-gray-400 font-read max-w-xs">
+                            Upload karyamu sebelum 25 Desember 2025 di Member Area.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="judges" class="py-20 bg-black/50">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-5xl sm:text-7xl custom-text font-bold mb-16">MEET THE JUDGES</h2>
+
+                <div class="flex flex-wrap justify-center gap-10 md:gap-20">
+                    <div class="flex flex-col items-center">
+                        <div
+                            class="w-40 h-40 rounded-xl p-[3px] bg-gradient-to-b from-yellow-400 to-yellow-700 mb-6">
+                            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Rizqy&backgroundColor=b6e3f4"
+                                class="w-full h-full rounded-xl object-cover bg-gray-800" alt="Rizqy Al Fajri">
+                        </div>
+                        <h3 class="text-3xl text-white">RIZQY AL FAJRI</h3>
+                        <p class="text-yellow-400 text-xl tracking-wide">ENVIRONMENT ARTIST</p>
+                        <p class="text-gray-400 text-sm font-read mt-2 max-w-xs">Professional Artist at Jumbo
+                            Animation.</p>
+                    </div>
+
+                    <div class="flex flex-col items-center">
+                        <div class="w-40 h-40 rounded-xl p-[3px] bg-gradient-to-b from-gray-400 to-gray-700 mb-6">
+                            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Radev&backgroundColor=c0aede"
+                                class="w-full h-full rounded-xl object-cover bg-gray-800" alt="Radev M Aziz">
+                        </div>
+                        <h3 class="text-3xl text-white">RADEV M. AZIZ</h3>
+                        <p class="text-gray-300 text-xl tracking-wide">CEO DEVATA STUDIO</p>
+                        <p class="text-gray-400 text-sm font-read mt-2 max-w-xs">Steering Committee BFOD.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="merch" class="py-20 bg-black relative overflow-hidden">
+            <div
+                class="absolute inset-0 bg-[url('https://academy.devatastudio.com/wp-content/uploads/2025/11/Container.webp')] bg-cover opacity-20">
+            </div>
+
+            <div class="container mx-auto px-4 relative z-10">
+                <div class="text-center mb-10">
+                    <h2 class="text-5xl sm:text-7xl custom-text font-bold mb-2">GEAR UP FOR BATTLE</h2>
+                    <p class="text-gray-300 text-xl font-read">Dapatkan "Armor" Eksklusif BFOD #1 sebagai Syarat
+                        Pendaftaran.</p>
+                </div>
+
+                <div class="flex flex-col md:flex-row items-center justify-center gap-10 max-w-5xl mx-auto">
+                    <div class="w-full md:w-1/2">
+                        <div class="relative group">
+                            <div
+                                class="absolute -inset-1 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000">
+                            </div>
+                            <div class="relative bg-[#1a1a1a] rounded-2xl border border-gray-700 overflow-hidden">
+                                <img src="https://placehold.co/800x800/1f1f1f/FFF?text=MOCKUP+KAOS+BFOD"
+                                    alt="Merchandise BFOD"
+                                    class="w-full object-cover transform group-hover:scale-105 transition duration-500">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="w-full md:w-1/2 text-left text-white">
+                        <h3 class="text-4xl text-yellow-400 mb-2">OFFICIAL KIT BFOD #1</h3>
+                        <div class="flex items-center gap-3 mb-6">
+                            <span class="text-3xl font-bold text-white">Rp 300.000</span>
+                            <span
+                                class="bg-yellow-500 text-black px-2 py-0.5 rounded text-sm font-bold font-read">INCLUDES
+                                TICKET</span>
+                        </div>
+
+                        <div class="space-y-4 mb-8">
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 bg-gray-800 rounded flex items-center justify-center">👕</div>
+                                <span class="text-lg text-gray-300">Limited Edition T-Shirt (High Quality
+                                    Cotton)</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 bg-gray-800 rounded flex items-center justify-center">🔑</div>
+                                <span class="text-lg text-gray-300">Exclusive Keychain & Pin</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 bg-gray-800 rounded flex items-center justify-center">🎫</div>
+                                <span class="text-lg text-gray-300">Akses Kompetisi & Grup Komunitas</span>
+                            </div>
+                        </div>
+
+                        <a href="#"
+                            class="w-full block text-center rounded-xl bg-gradient-to-r from-yellow-400 via-yellow-200 to-yellow-600 p-[3px] hover:scale-105 transition-transform shadow-[0_0_25px_rgba(250,204,21,0.4)]">
+                            <div class="bg-black hover:bg-transparent transition-colors rounded-lg py-4">
+                                <span class="text-2xl font-bold text-white hover:text-black">BELI SEKARANG &
+                                    DAFTAR</span>
+                            </div>
+                        </a>
+                        <p class="text-xs text-gray-500 mt-3 text-center font-read">*Invoice pembelian akan dikirim
+                            ke email Anda sebagai syarat pendaftaran.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="timeline">
+            <div
+                class="w-full flex flex-col items-center justify-center text-white py-20 px-4 bg-[url('https://txwatpcjenskrdnispuu.supabase.co/storage/v1/object/public/pasar3d/Section%20(1).webp')] bg-cover">
+                <div class="pb-10 text-center">
+                    <p class="font-neue font-bold text-5xl sm:text-7xl lg:text-8xl leading-none">
+                        LINI MASA <span class="custom-text text-transparent">PERTANDINGAN</span>
+                    </p>
+                </div>
+
+                <div class="pb-10 max-w-full sm:max-w-xl lg:max-w-4xl">
+                    <img src="https://academy.devatastudio.com/wp-content/uploads/2025/11/Group-26086265.png"
+                        alt="Timeline Ilustrasi" class="w-full h-auto" />
+                </div>
+
+                <div class="max-w-xl mx-auto px-4 space-y-10">
+                    <div class="border-l-2 border-yellow-500 pl-6 relative">
+                        <div class="absolute -left-[9px] top-0 w-4 h-4 bg-yellow-500 rounded-full"></div>
+                        <div class="custom-text text-transparent text-xl sm:text-2xl">21 NOV - 6 DES 2025</div>
+                        <div class="font-bold text-2xl sm:text-3xl">PENDAFTARAN PESERTA</div>
+                        <div class="text-lg font-read text-gray-300 mt-1">Periode pembelian merchandise & isi
+                            formulir.</div>
+                    </div>
+                    <div class="border-l-2 border-yellow-500 pl-6 relative">
+                        <div class="absolute -left-[9px] top-0 w-4 h-4 bg-yellow-500 rounded-full"></div>
+                        <div class="custom-text text-transparent text-xl sm:text-2xl">1 DES - 25 DES 2025</div>
+                        <div class="font-bold text-2xl sm:text-3xl">PENGUMPULAN KARYA</div>
+                        <div class="text-lg font-read text-gray-300 mt-1">Masa produksi dan upload karya ke Member
+                            Area.</div>
+                    </div>
+                    <div class="border-l-2 border-yellow-500 pl-6 relative">
+                        <div class="absolute -left-[9px] top-0 w-4 h-4 bg-yellow-500 rounded-full"></div>
+                        <div class="custom-text text-transparent text-xl sm:text-2xl">26 - 29 DES 2025</div>
+                        <div class="font-bold text-2xl sm:text-3xl">VOTING & PENJURIAN</div>
+                        <div class="text-lg font-read text-gray-300 mt-1">Voting publik untuk Juara Favorit &
+                            penilaian juri.</div>
+                    </div>
+                    <div class="border-l-2 border-yellow-500 pl-6 relative">
+                        <div class="absolute -left-[9px] top-0 w-4 h-4 bg-yellow-500 rounded-full"></div>
+                        <div class="custom-text text-transparent text-xl sm:text-2xl">30 DESEMBER 2025</div>
+                        <div class="font-bold text-2xl sm:text-3xl">PENGUMUMAN PEMENANG</div>
+                        <div class="text-lg font-read text-gray-300 mt-1">Pesta pengumuman juara secara live.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 bg-[#2a2929]">
+            <div class="container mx-auto px-4 max-w-4xl">
+                <h2 class="text-center text-5xl custom-text-silver font-bold mb-10">FAQ</h2>
+                <div class="space-y-4">
+                    <div class="bg-black/30 p-6 rounded-lg border border-gray-700">
+                        <h3 class="text-xl text-white mb-2 font-bold font-read">Software apa yang boleh digunakan?
+                        </h3>
+                        <p class="text-gray-400 font-read">Bebas! Blender, Maya, 3ds Max, C4D, dll. Yang dinilai
+                            adalah hasil akhir.</p>
+                    </div>
+                    <div class="bg-black/30 p-6 rounded-lg border border-gray-700">
+                        <h3 class="text-xl text-white mb-2 font-bold font-read">Apakah boleh pakai aset AI?</h3>
+                        <p class="text-gray-400 font-read">Aset AI generator murni dilarang. Aset pendukung boleh,
+                            tapi objek utama harus modeling sendiri.</p>
+                    </div>
+                    <div class="bg-black/30 p-6 rounded-lg border border-gray-700">
+                        <h3 class="text-xl text-white mb-2 font-bold font-read">Apakah boleh tim?</h3>
+                        <p class="text-gray-400 font-read">Tidak, ini kompetisi Individu. 1 Invoice = 1 Peserta.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="bg-black text-white py-10 px-4">
+                <h1
+                    class="custom-text text-center p-5 sm:p-10 text-5xl sm:text-7xl lg:text-8xl font-bold font-neue leading-none">
+                    SIAP MENUNJUKKAN KEKUATAN MU?
+                </h1>
+
+                <div>
+                    <div class="aspect-video w-full max-w-4xl lg:max-w-7xl mx-auto pb-10 sm:pb-20 lg:pb-40">
+                        <iframe class="w-full h-full rounded-xl" src="https://www.youtube.com/embed/tgbNymZ7vqY"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                    <div class="flex justify-center">
+                        <a href="https://academy.devatastudio.com/member-content/pendaftaran-kompetisi-cg-bfod1/"
+                            class="p-[2px] rounded-xl bg-gradient-to-r from-yellow-400 via-yellow-200 to-yellow-600 hover:scale-105 transition-all">
+                            <div class="px-10 py-4 text-black text-2xl font-bold bg-white/90 rounded-xl">
+                                DAFTAR SEKARANG
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <footer class="text-white">
+            <div
+                class="grid grid-cols-1 sm:grid-cols-2 bg-center bg-cover p-5 sm:p-10 bg-[url('https://academy.devatastudio.com/wp-content/uploads/2025/11/Container.webp')] gap-5">
+                <div
+                    class="flex flex-col justify-between gap-5 sm:gap-10 order-2 sm:order-1 text-center sm:text-left">
+                    <div>
+                        <div class="text-base sm:text-lg font-semibold custom-text">
+                            BFOD CUSTOMER SERVICE
+                        </div>
+                        <div class="text-sm sm:text-base">+62 812-3456-789</div>
+                    </div>
+
+                    <div>
+                        <div class="text-sm">© 2025 Devata Studio</div>
+                        <div class="text-sm">Semua Hak Cipta Dilindungi.</div>
+                    </div>
+                </div>
+
+                <div class="flex-1 text-center sm:text-right order-1 sm:order-2">
+                    <div class="text-4xl sm:text-6xl md:text-8xl font-bold leading-none sm:leading-tight">
+                        <div>BATTLE FIELD</div>
+                        <div>OF DEVATA #1</div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
+
+

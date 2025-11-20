@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app" style=" display: flex;justify-content: center;align-items: center; height: 100vh;"></div>
+    <script>
+        onload = function() {
+            let id = document.getElementById("app");
+            let loading = document.createElement("div");
+
+
+            loading.textContent = "Memuat Arena"
+            loading.style.fontSize = "24px";
+            id.appendChild(loading);
+
+            let loaded = setInterval(()=>{
+                loading.textContent += "."
+            },1000)
+
+            setTimeout(() => {
+                clearInterval(loaded);
+                loading.textContent = "Arena Berhasil Dimuat";
+
+                setTimeout(() => {
+                    app.style.display = "none";
+                    main.style.display = "block";
+                },1000);
+            }, 3000);
+        }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,86 @@
+    <style>
+        /* CSS Wajib: Sembunyikan konten utama saat loading */
+
+        #content-wrapper {
+
+            opacity: 0;
+
+            transition: opacity 0.5s ease;
+
+        }
+
+
+
+        /* CSS Loading Screen */
+
+        #loading-screen {
+
+            position: fixed;
+
+            top: 0;
+
+            left: 0;
+
+            width: 100%;
+
+            height: 100%;
+
+            background-color: #2a2929;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            z-index: 9999;
+
+        }
+
+
+
+        /* Efek Glow Halus */
+
+        .glow-text {
+
+            text-shadow: 0 0 20px rgba(250, 204, 21, 0.5);
+
+        }
+
+
+
+        .glow-box {
+
+            box-shadow: 0 0 25px rgba(250, 204, 21, 0.15);
+
+        }
+    </style>
+
+
+        <script>
+            function showContent() {
+
+                const loadingScreen = document.getElementById("loading-screen");
+
+                if (loadingScreen) loadingScreen.style.display = "none";
+
+
+
+                const contentWrapper = document.getElementById("content-wrapper");
+
+                if (contentWrapper) contentWrapper.style.opacity = "1";
+
+            }
+
+
+
+            if (typeof tailwind !== "undefined") {
+
+                setTimeout(showContent, 800); // Sedikit delay biar loading screen terlihat keren
+
+            } else {
+
+                window.addEventListener("load", showContent);
+
+            }
+        </script>
